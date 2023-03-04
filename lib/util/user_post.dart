@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -14,16 +16,27 @@ class UserPost extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ///profile photo
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                    color: Colors.grey[300], shape: BoxShape.circle),
+              Row(
+                children: [
+                  ///profile photo
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        color: Colors.grey[300], shape: BoxShape.circle),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    name,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
-              SizedBox(width: 10,),
-              Text(name)
+              Icon(Icons.menu)
             ],
           ),
         ),
